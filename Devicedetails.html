@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Device Details</title>
+  </head>
+  <body>
+    <h1>Device Details</h1>
+    <div id="device details"></div>
+
+    <script>
+      // Get the device name from the query parameter
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const deviceName = urlParams.get('device');
+
+      // Perform logic to retrieve device details from the database
+      // You can use AJAX or fetch to make a request to the server and retrieve the data
+      // For demonstration purposes, let's assume we have a sample data object
+      const deviceData = {
+        name: deviceName,
+        location: 'Sample Location',
+        type: 'Sample Device Type',
+        humidity: 'Sample Humidity',
+        lightStatus: 'Sample Light Status',
+        temperature: 'Sample Room Temperature',
+      };
+
+      // Display the device details on the page
+      const deviceDetailsElement = document.getElementById('device details');
+      deviceDetailsElement.innerHTML = `
+        <h2>${deviceData.name}</h2>
+        <p>Location: ${deviceData.location}</p>
+        <p>Type: ${deviceData.type}</p>
+        <p>Humidity: ${deviceData.humidity}</p>
+        <p>Light Status: ${deviceData.lightStatus}</p>
+        <p>Temperature: ${deviceData.temperature}</p>
+      `;
+    </script>
+	<style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        padding: 20px;
+        background-image: url('back.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      h1 {
+        color: #e74c3c;
+        text-align: center;
+      }
+
+      #device-details {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color:#DFF4F3 ;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        color: #e74c3c;
+      }
+
+      p {
+        color:#EEF8F7 ;
+        margin-bottom: 10px;
+      }
+    </style>
+  </body>
+</html>
